@@ -1,0 +1,311 @@
+/* Reset default margin and padding */
+body,
+h1,
+h2,
+p {
+  margin: 0;
+  padding: 0;
+}
+body {
+  overflow-x: hidden;
+  background-color: #5c5c5c;
+}
+.page-title {
+  font-size: 36px; /* Tamanho da fonte do título */
+  margin-bottom: 20px; /* Espaço entre o título e a seção de cartas */
+  text-align: center;
+  margin-top: 30vh;
+  color: white;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+/* Basic styling for header */
+header {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+}
+
+header video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-icon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.bar {
+  width: 100%;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Adicione estilos para a animação do ícone de menu aberto */
+.menu-open .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-open .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+#menu-icon.menu-open {
+  transform: translateX(
+    230px
+  ); /* Ajuste o valor de acordo com a largura do side menu */
+  transition: transform 0.3s ease-in-out;
+}
+.side-menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 300px; /* Ajuste a largura conforme necessário */
+  height: 100%;
+  background: #001e5f; /* Gradiente de preto para branco para azul */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  z-index: 999; /* Certifique-se de que está acima de outros elementos */
+}
+
+/* Estilos para os itens da lista */
+.side-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 15vh;
+  margin-left: 3vh;
+}
+
+.side-menu li {
+  font-size: 24px; /* Tamanho da fonte aumentado */
+  margin-bottom: 20px; /* Espaçamento maior entre os itens */
+  cursor: pointer;
+}
+.side-menu {
+  /* Seus estilos existentes */
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0; /* Começa com opacidade 0 para ocultar o menu */
+}
+.side-menu.visible {
+  transform: translateX(0);
+  opacity: 1; /* Torna o menu visível com opacidade total */
+}
+
+/* Estilos para os itens da lista quando passa o mouse por cima */
+.side-menu li:hover {
+  text-decoration: underline;
+}
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  font-weight: bold;
+  z-index: 9999;
+  background-image: url(assets/logo.jpg);
+}
+
+/* Styling for cards section */
+.card-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.column {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  transition: transform 0.2s ease-in-out;
+  height: 40vh;
+  width: 40vh;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 30px;
+  margin: 0 auto; /* Centralize horizontalmente */
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card h2 {
+  margin-bottom: 10px;
+}
+
+.card-image {
+  height: 30vh;
+  width: 40vh;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  margin: 2vh; /* Adicionei uma margem geral de 2vh ao container */
+  margin-bottom: 30vh;
+  margin-top: 30vh;
+}
+
+.content {
+  flex: 1;
+  width: calc(100% - 60vh); /* O texto terá uma largura máxima de 60vh */
+}
+
+.title {
+  text-align: left;
+  margin-left: 60vh;
+  color: #001e5f;
+}
+
+.text {
+  text-align: left;
+  max-width: 60vh;
+  margin-left: 35vh;
+  color: white;
+}
+
+.image {
+  text-align: right;
+  margin-left: 100vh;
+}
+
+.image img {
+  max-width: 100%; /* A imagem terá uma largura máxima de 100% do seu contêiner */
+  height: auto; /* A altura da imagem será ajustada automaticamente para manter a proporção */
+  margin-top: -35vh;
+}
+
+/* Styling for discover section */
+.discover {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin-bottom: 30vh;
+}
+
+.discover .card {
+  width: calc(30% - 20px); /* Calculated width to create space between cards */
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.discover .card:hover {
+  transform: scale(1.05);
+}
+
+.discover .card h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px;
+  text-align: center;
+}
+.card-image1 {
+  height: 30vh;
+  width: 50vh;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  margin: 3vh;
+}
+/* Styling for footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo img {
+  width: 50px;
+  margin-left: 6vh;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-social a {
+  margin-right: 3vh;
+  color: white;
+}
+
+.footer-info p {
+  margin: 10px 0;
+}
+
+/* Estilize os links das redes sociais e ajuste as margens, cores, etc. conforme necessário */
+.footer-social img {
+  width: 30px;
+}
+
+/* Additional Styles */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Media Queries for Responsive Design (adjust as needed) */
+@media screen and (max-width: 768px) {
+  .cards .card,
+  .discover .card {
+    width: 100%;
+  }
+}
